@@ -1,0 +1,209 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+:root {
+  /* Neutral-colors */
+
+--Almost-White: hsl(0, 0%, 98%);
+--Medium-Gray: hsl(0, 0%, 41%);
+--Almost-Black: hsl(0, 0%, 8%);
+
+--epilogue-font: 'Epilogue', sans-serif;
+
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
+header .logo {
+  margin-top: 0.5rem;
+}
+nav button {
+  display: block;
+  margin: 0.5em auto;
+  padding: 0.5em;
+  font-size: 1rem;
+  height: 2.7em;
+  background-color: white;
+  width: 80%;
+  color: var(--Medium-Gray);
+}
+.register {
+  border: 1px solid var(--Medium-Gray);
+  border-radius: 12px;
+}
+nav ul li{
+  margin: 1.3rem;
+  list-style: none;
+}
+nav a {
+  margin: 0.5rem 0;
+  color: var(--Medium-Gray);
+  margin-left: 0.9rem;
+}
+.itemsStart {
+  margin-top: 4em;
+}
+.features img {
+  height: 1.3rem;
+  margin-bottom: -.3rem;
+}
+nav {
+  position: absolute;
+  background-color: white;
+  top:0;
+  left: 40%;
+  height: 130vh;
+  width: 60%;
+}
+.mob-nav, .mob-mininav, .mob-mininavtwo{
+  visibility: hidden;
+}
+.mob-mininav {
+  margin: -5.5rem;
+}
+nav .mob-mininavtwo {
+  margin: -4rem;
+}
+.up {
+  margin-left: .4rem;
+}
+.company {
+  margin: 0 -0.8rem;
+}
+.navitems {
+  margin-left: 0.4rem;
+}
+.menuClose {
+  float: right;
+  margin: 1rem;
+}
+.logo {
+  position:relative;
+}
+.reminderimg {
+  width: 1.1rem;
+  margin-left: 0.2rem;
+}
+main {
+  max-width: 100vw;
+  text-align: center;
+}
+.hero-mob {
+  width: 100%;
+}
+.hero-desk {
+  display: none;
+}
+.main-title {
+  padding: 1em 0.5em 0.5em;
+  font-size: 2.2rem;
+}
+.main-text {
+  margin: 0 1em;
+  color: var(--Medium-Gray);
+}
+.main-button {
+  background-color: var(--Almost-Black);
+  color: var(--Almost-White);
+  margin: 1.3em auto;
+  padding: 0.9em 1em;
+  border-radius: 12px;
+}
+figure {
+  padding: 1rem 0.5rem;
+}
+figure img:not(:last-child) {
+  margin-right: 0.9rem;
+}
+figure img {
+  height: 1.5rem;
+  width: 4.5rem;
+  padding: 0.2rem;
+}
+figure .audio {
+  height: 1.8rem;
+  width: 3.6rem;
+  margin-bottom: -5px;
+}
+nav, main {
+  font-family: var(--epilogue-font);
+}
+@media (min-width: 768px){
+  .container {
+    max-width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1rem;
+  }
+  .logo {
+    margin: 0 1rem;
+  }
+  header {
+    max-width: 90vw;
+  }
+  .grid-col {
+    text-align: left;
+    margin: 1rem 0.8em;
+  }
+  .main-text {
+    font-size: .9rem;
+    padding: 1.3em 1.7em 1.3em 1.3em;
+  }
+  .main-title {
+    font-size: 3.4rem;
+  }
+  .main-button {
+    margin: 1em 2em;
+  }
+  .hero-desk{
+    display: grid;
+    grid-column: 2/ -1;
+    width: 90%;
+    margin: 1rem;
+    padding: 2rem;
+  }
+  .hero-mob, .openMenu, .menuClose {
+    display: none;
+  }
+  nav, nav ul {
+    display: flex;
+  }
+  nav {
+    height: 50px;
+    position: static;
+    max-width: 90%;
+    font-size: .74rem;
+  }
+  nav button {
+    font-size: .74rem;
+    margin-top: 0.7rem;
+  }
+  .features, .company {
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: 11em;
+   }
+  nav a {
+    margin: 0.2em;
+    width: auto;
+  }
+  .itemsStart {
+    margin: 1.3rem 0.5rem;
+  }
+  figure {
+    margin: 1.2em;
+  }
+}
