@@ -14,7 +14,7 @@ function Header () {
     const miniNav = useRef()
     const miniNavTwo = useRef()
 
-    const showNavbar =() => {
+    const showNavbar = () => {
         navRef.current.classList.toggle('mob-nav')
     }
 
@@ -33,10 +33,12 @@ function Header () {
             <img src={menuIcon} alt="menu icon" onClick={showNavbar} className="openMenu" />
             <nav ref={navRef} >
                 <img src={menuClose} alt="closing menu icon" className="menuClose" onClick={showNavbar} />
-                <ul>
+                <ul className="navMenu" >
                     <li onClick={showMiniNav} className="itemsStart" >Features
-                        <img src={arrowUp} alt="arrow up icon" className="arrowUp" />
-                        <img src={arrowDown} alt="arrow down icon" className="arrowDown" />
+                        <img src={arrowUp}
+                            alt="arrow icon"
+                            className="arrow Up" />
+                        <img src={arrowDown} alt="arrow down icon" className="arrow Down" />
                         <ul className="features" ref={miniNav} >
                             <li><img src={todoIcon} alt="todo icon" /><a href="#" >Todo List</a></li>
                             <li><img src={calenderIcon} alt="calendar icon" /><a href="#" >Calendar</a></li>
@@ -45,8 +47,8 @@ function Header () {
                         </ul>
                     </li>
                     <li onClick={showMiniNavTwo} >Company
-                        <img src={arrowUp} alt="arrow up icon" className="arrowUp" />
-                        <img src={arrowDown} alt="arrow down icon" className="arrowDown" />
+                        <img src={arrowUp} alt="arrow up icon" className="arrow Up" />
+                        <img src={arrowDown} alt="arrow down icon" className="arrow Down" />
                         <ul ref={miniNavTwo} className="company" >
                             <li><a href="#" >History</a></li>
                             <li><a href="#" >Our Team</a></li>
