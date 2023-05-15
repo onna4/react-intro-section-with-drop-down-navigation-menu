@@ -202,10 +202,10 @@ nav, main {
   nav button {
     font-size: .74rem;
     margin: 0.7rem 0;
-    width: 150px;
+    min-width: 5rem;
   }
   .login {
-    margin-left: 40%;
+    margin-left: 10%;
     margin-right: 1em;
   }
   .features, .company {
@@ -260,6 +260,9 @@ nav, main {
     width: 5rem;
     height: 2rem;
   }
+  .login {
+    margin-left: 25%;
+  }
   .main-text {
     font-size: 1rem;
     padding: 1em 2.6em 1.3em 1em;
@@ -287,5 +290,7 @@ nav, main {
   .main-title {
     font-size: 3.5rem;
   }
-
+  .login {
+    margin-left: 55%;
+  }
 }
