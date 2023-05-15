@@ -7,53 +7,55 @@ import todoIcon from "../assets/images/icon-todo.svg"
 import calenderIcon from "../assets/images/icon-calendar.svg"
 import remindersIcon from "../assets/images/icon-reminders.svg"
 import planningIcon from "../assets/images/icon-planning.svg"
-import {useRef, useState} from "react"
+import { useRef, useState } from "react"
 
 function Header () {
-    const navRef = useRef()
-    const miniNav = useRef()
-    const miniNavTwo = useRef()
+    const [miniNavButton, setMiniNavButton] = useState(false)
+    const [secMiniNavButton, setSecMiniNavButton] = useState(false)
 
-    const showNavbar = () => {
-        navRef.current.classList.toggle('mob-nav')
+    const navRef = useRef(null)
+
+    const toggleNavbar = () => {
+        navRef.current.classList.toggle("responsiveNav")
     }
 
-    const showMiniNav =() => {
-        miniNav.current.classList.toggle('mob-mininav')
-
+    const toggleMiniNav =() => {
+        setMiniNavButton(prevMiniNavButton => !prevMiniNavButton)
     }
 
-    const showMiniNavTwo =() => {
-        miniNavTwo.current.classList.toggle('mob-mininavtwo')
+    const toggleMiniNavTwo =() => {
+       setSecMiniNavButton(prevSecMiniNavButton => !prevSecMiniNavButton)
     }
 
     return (
         <header>
             <img src={logo} alt="logo" className="logo" />
-            <img src={menuIcon} alt="menu icon" onClick={showNavbar} className="openMenu" />
-            <nav ref={navRef} >
-                <img src={menuClose} alt="closing menu icon" className="menuClose" onClick={showNavbar} />
-                <ul className="navMenu" >
-                    <li onClick={showMiniNav} className="itemsStart" >Features
-                        <img src={arrowUp}
+            <button onClick={toggleNavbar} className="button" >
+                <img src={menuIcon} alt="menu icon"  className="openMenu" />
+            </button>
+            <nav className="mainNav navDesk" ref={navRef} >
+                <button onClick={toggleNavbar} className="button" >
+                    <img src={menuClose} alt="closing menu icon"  className="menuClose" />
+                </button>
+                <ul>
+                    <li className="itemsStart" ><a onClick={toggleMiniNav} >Features</a>
+                        <img src={miniNavButton? arrowUp: arrowDown}
                             alt="arrow icon"
-                            className="arrow Up" />
-                        <img src={arrowDown} alt="arrow down icon" className="arrow Down" />
-                        <ul className="features" ref={miniNav} >
-                            <li><img src={todoIcon} alt="todo icon" /><a href="#" >Todo List</a></li>
-                            <li><img src={calenderIcon} alt="calendar icon" /><a href="#" >Calendar</a></li>
-                            <li><img src={remindersIcon} alt="reminders icon" className="reminderimg" /><a href="#" className="reminders" >Reminders</a></li>
-                            <li><img src={planningIcon} alt="planning icon" /><a href="#" >Planning</a></li>
-                        </ul>
+                            className="arrow" />
+                        {miniNavButton && <ul className="features" >
+                            <li><img src={todoIcon} alt="todo icon" className="smimg" /><a href="#" >Todo List</a></li>
+                            <li><img src={calenderIcon} alt="calendar icon" className="smimg" /><a href="#" >Calendar</a></li>
+                            <li><img src={remindersIcon} alt="reminders icon" className="reminderimg smimg" /><a href="#" className="reminders" >Reminders</a></li>
+                            <li><img src={planningIcon} alt="planning icon" className="smimg" /><a href="#" >Planning</a></li>
+                        </ul>}
                     </li>
-                    <li onClick={showMiniNavTwo} >Company
-                        <img src={arrowUp} alt="arrow up icon" className="arrow Up" />
-                        <img src={arrowDown} alt="arrow down icon" className="arrow Down" />
-                        <ul ref={miniNavTwo} className="company" >
+                    <li><a onClick={toggleMiniNavTwo} >Company</a>
+                        <img src={secMiniNavButton? arrowUp: arrowDown} alt="arrow icon" className="arrow" />
+                        {secMiniNavButton && <ul className="company" >
                             <li><a href="#" >History</a></li>
                             <li><a href="#" >Our Team</a></li>
                             <li><a href="#" >Blog</a></li>
-                        </ul>
+                        </ul>}
                     </li>
                     <li className="navitems" ><a href="#" >Careers</a></li>
                     <li className="navitems" ><a href="#" >About</a></li>
