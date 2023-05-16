@@ -30,15 +30,15 @@ function Header () {
     return (
         <header>
             <img src={logo} alt="logo" className="logo" />
-            <button onClick={toggleNavbar} className="button" >
+            <button onClick={toggleNavbar} aria-expanded="false" className="button" >
                 <img src={menuIcon} alt="menu icon"  className="openMenu" />
             </button>
             <nav className="mainNav navDesk" ref={navRef} >
-                <button onClick={toggleNavbar} className="button" >
+                <button onClick={toggleNavbar} aria-expanded="true" className="button" >
                     <img src={menuClose} alt="closing menu icon"  className="menuClose" />
                 </button>
                 <ul>
-                    <li className="itemsStart" ><a onClick={toggleMiniNav} >Features</a>
+                    <li className="itemsStart" ><a onClick={toggleMiniNav} aria-expanded={miniNavButton? "true": "false"} >Features</a>
                         <img src={miniNavButton? arrowUp: arrowDown}
                             alt="arrow icon"
                             className="arrow" />
@@ -49,7 +49,7 @@ function Header () {
                             <li><img src={planningIcon} alt="planning icon" className="smimg" /><a href="#" >Planning</a></li>
                         </ul>}
                     </li>
-                    <li><a onClick={toggleMiniNavTwo} >Company</a>
+                    <li><a onClick={toggleMiniNavTwo} aria-expanded={secMiniNavButton? "true": "false"} >Company</a>
                         <img src={secMiniNavButton? arrowUp: arrowDown} alt="arrow icon" className="arrow" />
                         {secMiniNavButton && <ul className="company" >
                             <li><a href="#" >History</a></li>
