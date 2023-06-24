@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./public/react-intro-section-with-drop-down-navigation-menu_.png)
 
 
 ### Links
